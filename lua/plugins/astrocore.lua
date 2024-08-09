@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -58,8 +58,19 @@ return {
             )
           end,
           desc = "Close buffer from tabline",
+
+          -- Load the plugins/dash.luad if there is no buffer open:
+          
         },
 
+        ["<Leader>c"] = {
+            function()
+              local bufs = vim.fn.getbufinfo { buflisted = true }
+              require("astrocore.buffer").close(0)
+              if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start() end
+            end,
+            desc = "Close Buffer and return to default dashboard",
+          },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
