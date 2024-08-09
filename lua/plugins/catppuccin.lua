@@ -4,12 +4,17 @@ return {
     name = "catppuccin",
     opts = {
       dim_inactive = { enabled = true, percentage = 0.25 },
-      highlight_overrides = {
-        mocha = function(c)
-          return {
-            Normal = { bg = c.mantle },
-          }
-        end,
+      integrations = {
+        sandwich = false,
+        noice = true,
+        mini = true,
+        leap = true,
+        markdown = true,
+        neotest = true,
+        cmp = true,
+        overseer = true,
+        lsp_trouble = true,
+        rainbow_delimiters = true,
       },
     },
   },
