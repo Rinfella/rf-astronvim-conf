@@ -24,7 +24,7 @@ return {
         -- colors gotten from highlight groups
 
         return {
-          TelescopeBorder = { fg = "#ff0000", bg = bg },
+          TelescopeBorder = { fg = bg, bg = bg },
           TelescopeNormal = { bg = bg },
           TelescopePreviewBorder = { fg = bg, bg = bg },
           TelescopePreviewNormal = { bg = bg },
