@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
@@ -16,29 +16,26 @@ return {
     highlights = {
       init = function()
         local get_hlgroup = require("astroui").get_hlgroup
-        -- get highlights from htighlight groups:
         local normal = get_hlgroup "Normal"
         local fg, bg = normal.fg, normal.bg
-        local bg_alt = get_hlgroup("Visual").bg
-        local green = get_hlgroup("String").bg
         local red = get_hlgroup("Error").bg
 
         -- return a table of highlights for telescope based on
         -- colors gotten from highlight groups
 
         return {
-          TelescopeBorder = { fg = bg_alt, bg = bg },
+          TelescopeBorder = { fg = "#ff0000", bg = bg },
           TelescopeNormal = { bg = bg },
           TelescopePreviewBorder = { fg = bg, bg = bg },
           TelescopePreviewNormal = { bg = bg },
-          TelescopePreviewTitle = { fg = bg, bg = green },
-          TelescopePromptBorder = { fg = bg_alt, bg = bg_alt },
-          TelescopePromptNormal = { fg = fg, bg = bg_alt },
-          TelescopePromptPrefix = { fg = red, bg = bg_alt },
-          TelescopePromptTitle = { fg = bg, bg = red },
+          TelescopePreviewTitle = { fg = "#ffffff", bg = "#2B4570" },
+          TelescopePromptBorder = { fg = "#D8315B", bg = bg },
+          TelescopePromptNormal = { fg = fg, bg = bg },
+          TelescopePromptPrefix = { fg = red, bg = bg },
+          TelescopePromptTitle = { fg = "#ffffff", bg = "#D8315B" },
           TelescopeResultsBorder = { fg = bg, bg = bg },
           TelescopeResultsNormal = { bg = bg },
-          TelescopeResultsTitle = { fg = bg, bg = bg },
+          TelescopeResultsTitle = { fg = "#000000", bg = "#55D6BE" },
         }
       end,
     },
