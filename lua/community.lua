@@ -8,7 +8,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.vscode" },
-  { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   -- import/override with your plugins folder
 }
