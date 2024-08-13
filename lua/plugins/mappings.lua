@@ -8,8 +8,21 @@ return {
         n = {
           -- second key is the lefthand side of the map
           -- mappings seen under group name "Buffer"
+
+          -- NEOCLIP
           ["<Leader>pp"] = { "<cmd>Telescope neoclip<cr>", desc = "Open neoclip buffer" },
+
+          -- CHEATSHEET
           ["<Leader>ch"] = { "<cmd>Cheatsheet<cr>", desc = "Open Cheatsheet buffer" },
+
+          -- OBSIDIAN
+          ["<Leader>oo"] = { "<cmd>ObsidianSearch<cr>", desc = "Open Obsidian Search" },
+          ["<Leader>os"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Open Obsidian Quick Switcher" },
+          ["<Leader>on"] = { "<cmd>ObsidianNew<cr>", desc = "Create Obsidian New Note" },
+          ["<Leader>op"] = { "<cmd>ObsidianPasteImg<cr>", desc = "Paste image from clipboard" },
+          ["<Leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Show location list of backlinks" },
+          ["<Leader>ot"] = { "<cmd>ObsidianTemplate<cr>", desc = "Choose a template" },
+          -- Choose a buffer to close
           ["<Leader>bD"] = {
             function()
               require("astroui.status").heirline.buffer_picker(

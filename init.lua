@@ -15,5 +15,15 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.md",
+  callback = function() vim.opt.conceallevel = 1 end,
+})
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+  pattern = "*.md",
+  callback = function() vim.opt.conceallevel = 1 end,
+})
+
 require "lazy_setup"
 require "polish"
